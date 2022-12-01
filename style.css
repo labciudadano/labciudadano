@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1.25em;
+  overflow-x: hidden;
+  background-color: #ffff;
+
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.2em;
+
+  scrollbar-width: thin;          
+  scrollbar-color: black white;   
+}
+a{
+    text-decoration: none;
+
+    color: black;
+}
+span{
+  font-weight: bold;
+}
+
+
+.container-grid {
+  display: grid;
+  margin: 0 auto;
+  
+
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+ 
+  grid-template-areas: "uno dos";
+}
+.item001 {
+  grid-area: uno;
+  width: 100%;
+  height: 760px;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+
+  grid-template-areas: 
+  "item1 . ."
+  "item2 item2 item2"
+  "item3 item3 item3"
+  "item4 item4 item4";
+
+}
+.title1{
+    grid-area: item1;
+    width: 100%;
+    padding: 0.25em;
+    
+    
+    font-size: 3em;
+    color: white;
+    background-color: black;
+}
+.title2{
+  grid-area: item2;
+  font-size: 3em;
+
+  color: white;
+  background-color: black;
+}
+.logo{
+    grid-area: item3;
+    width: 673.4px;
+    height: 455.33px;  
+    margin-top: 5px;
+
+    
+}
+.animation{
+    object-fit: contain;
+    width: 673.4px;
+    height: 458.5px; 
+    animation-name: turn;
+    animation-duration: 10s;
+}
+@keyframes turn{
+  from{
+    transform:rotate(0);
+  }
+  to{
+    transform:rotate(180deg);
+  }
+}
+.mensaje{
+  grid-area: item4;
+  padding: 0.25em;
+
+
+  font-size: 2em;
+  background-color: #66A254;
+
+  animation-name: slidein;
+  animation-duration: 10s;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+.item002 {
+  grid-area: dos;
+  width: auto;
+  height: 760px;
+
+}
+
+.item002>ol{
+    list-style: none;
+}
+
+.index{
+    width: 100%;
+    padding: 1em;
+
+    text-align: right;
+
+    border-bottom: 0.2em solid black;
+}
+
+.index>a{
+    display: block;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    
+
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+.content{
+    margin-top: 90px;
+    overflow: "hidden";
+
+    width: 100%;
+    height: 320px;
+
+}
+
+.content > p{
+    display: block;
+    justify-content: left;
+    font-size: 0.95em;
+    widows: 2;
+}
+.networks{
+  margin-top: 20px;
+  list-style: none;
+  font-weight: lighter;
+  cursor: pointer;
+
+  text-align: right;
+}
+.networks>li{
+  display: inline-block;
+}
