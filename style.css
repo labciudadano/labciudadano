@@ -7,7 +7,6 @@
 html {
   height: 100%;
 }
-
 body {
   width: 100%;
   min-height: 100vh;
@@ -30,6 +29,7 @@ span{
   font-weight: bold;
 }
 
+
 .container-grid {
   display: grid;
   margin: 0 auto;
@@ -37,42 +37,91 @@ span{
 
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-gap: 50px;  
+ 
   grid-template-areas: "uno dos";
 }
-
 .item001 {
   grid-area: uno;
+  width: 100%;
+  height: 760px;
+  overflow: hidden;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 
   grid-template-areas: 
   "item1 . ."
   "item2 item2 item2"
-  "item3 item3 item4";
+  "item3 item3 item3"
+  "item4 item4 item4";
 
-  width: auto;
-  height: 760px;
 }
 .title1{
     grid-area: item1;
+    width: 100%;
+    padding: 0.25em;
     
     
     font-size: 3em;
-}
-.logo{
-    grid-area: item2;
-    width: 510.33px;
-    height: 510.33px;
-
+    color: white;
     background-color: black;
 }
 .title2{
-    grid-area: item3;
-    text-align: right;
-    font-size: 3em;
+  grid-area: item2;
+  font-size: 3em;
+
+  color: white;
+  background-color: black;
 }
+.logo{
+    grid-area: item3;
+    width: 673.4px;
+    height: 455.33px;  
+    margin-top: 5px;
+
+    
+}
+.animation{
+    object-fit: contain;
+    width: 673.4px;
+    height: 458.5px; 
+    animation-name: turn;
+    animation-duration: 10s;
+}
+@keyframes turn{
+  from{
+    transform:rotate(0);
+  }
+  to{
+    transform:rotate(180deg);
+  }
+}
+.mensaje{
+  grid-area: item4;
+  padding: 0.25em;
+
+
+  font-size: 2em;
+  background-color: #66A254;
+
+  animation-name: slidein;
+  animation-duration: 10s;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+
 a:hover{
     text-decoration: underline;
 }

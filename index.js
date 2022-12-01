@@ -41,6 +41,7 @@ function getParrafo(indice) {
 function getImg(){
 
     if( imgs.length == 0){
+        console.log("No images");
         for(let i = 0; i < images.length; i++) {
         
             let elem = document.createElement("img");
